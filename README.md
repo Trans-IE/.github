@@ -13,14 +13,18 @@ para esto.
 
 ## Por qué importa el template
 
-La sección **"Qué cambia"**, entre los marcadores `<!-- release-notes:start -->` y
-`<!-- release-notes:end -->`, no es decorativa: es el texto que se publica **tal cual** en
+La sección **"Qué cambia"** no es decorativa: es el texto que se publica **tal cual** en
 las release notes. El workflow de release lo cosecha de cada PR del rango en vez de usar
 el título, que GitHub autogenera desde el nombre de rama y queda inservible
 ("Development", "Fix/teams list").
 
+Tiene tres subsecciones: Funcionalidades, Correcciones y Mantenimiento. Cada una va entre
+sus marcadores, `<!-- release-notes:feat:start -->` … `<!-- release-notes:feat:end -->`, y
+lo mismo con `fix` y `chore`. Cada bullet sale en la sección del release donde está
+escrito, sin importar la rama del PR.
+
 El workflow `pr-lint` de [Trans-IE/gh-workflows](https://github.com/Trans-IE/gh-workflows)
-bloquea el PR si esa sección no tiene al menos un bullet. Así que editar este archivo
+bloquea el PR si ninguna subsección tiene al menos un bullet. Así que editar este archivo
 cambia lo que se le pide a la gente en todos los repos a la vez — conviene pensarlo dos
 veces.
 
@@ -34,5 +38,8 @@ tag (`@v1`), los archivos por defecto se leen siempre de la rama por defecto de 
 Un cambio acá impacta en el próximo PR de cualquier repo, sin intermediarios.
 
 Si movés o renombrás los marcadores de release notes, el cosechador deja de encontrarlos y
-cae al título del PR. Los marcadores y el heading "Qué cambia" son la interfaz con
-`release-notes.sh`.
+cae al título del PR. Los marcadores `release-notes:feat|fix|chore` son la interfaz con
+`release-notes.sh`. El texto de los headings `###` se puede cambiar sin romper nada.
+
+Este template necesita `Trans-IE/gh-workflows` `v1.2.0` o posterior. Con una versión
+anterior, `pr-lint` no reconoce las subsecciones y rechaza el PR.

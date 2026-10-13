@@ -1,9 +1,23 @@
 ## Qué cambia
 
 <!-- Un bullet por cambio, en lenguaje de producto: esto se publica TAL CUAL en las release notes. -->
-<!-- release-notes:start -->
+<!-- Cada bullet sale en la sección donde lo pongas, sin importar la rama. Las vacías se ignoran. -->
+
+### Funcionalidades
+<!-- release-notes:feat:start -->
 -
-<!-- release-notes:end -->
+<!-- release-notes:feat:end -->
+
+### Correcciones
+<!-- release-notes:fix:start -->
+-
+<!-- release-notes:fix:end -->
+
+### Mantenimiento
+<!-- Refactors, dependencias, CI. En el release sale colapsado. -->
+<!-- release-notes:chore:start -->
+-
+<!-- release-notes:chore:end -->
 
 ## Jira
 
