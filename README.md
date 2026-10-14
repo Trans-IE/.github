@@ -13,8 +13,9 @@ para esto.
 
 ## Por qué importa el template
 
-La sección **"Qué cambia"** no es decorativa: es el texto que se publica **tal cual** en
-las release notes. El workflow de release lo cosecha de cada PR del rango en vez de usar
+La sección **"Novedades"** no es decorativa: es el texto que se publica **tal cual** en
+las release notes. La convención es copiar ahí el título de la tarea de Jira y sumar como
+otro bullet lo que se haya cambiado fuera del alcance. El workflow de release lo cosecha de cada PR del rango en vez de usar
 el título, que GitHub autogenera desde el nombre de rama y queda inservible
 ("Development", "Fix/teams list").
 
@@ -29,7 +30,10 @@ cambia lo que se le pide a la gente en todos los repos a la vez — conviene pen
 veces.
 
 Los checkboxes de "Requerimientos de despliegue" también se leen: generan un aviso
-destacado arriba del release cuando la versión necesita una migración.
+destacado arriba del release cuando la versión necesita una migración. Del heading
+`## Jira` sale el link que acompaña a cada bullet, así que no hay que renombrarlo.
+
+"Acotación técnica" es para quien revisa el PR: no se publica en ningún lado.
 
 ## Cuidado al editar
 
